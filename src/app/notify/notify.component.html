@@ -1,0 +1,17 @@
+<div><button (click)="getAuthCode()">連動 LINE Notify</button></div>
+
+<div>
+  <button (click)="pushNotify()" [disabled]="localAccessToken === ''">
+    Push LINE Notify
+  </button>
+</div>
+
+<div>
+  <button (click)="revokeToken()" [disabled]="localAccessToken === ''">
+    移除Token(解除連動)
+  </button>
+</div>
+
+<div>
+  <a [routerLink]="'/'">切換 LINE Login</a>
+</div>

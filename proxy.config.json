@@ -1,0 +1,17 @@
+{
+  "/oauth2": {
+    "target": "https://access.line.me",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/oauth/token": {
+    "target": "https://notify-bot.line.me",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api": {
+    "target": "https://notify-api.line.me/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

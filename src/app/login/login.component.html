@@ -1,0 +1,17 @@
+<div>
+  <a [routerLink]="'/notify'">切換 LINE Notify</a>
+</div>
+
+<div>
+  <button (click)="lineLogin()" *ngIf="profileInfoObj === null">
+    登入 LINE
+  </button>
+</div>
+
+<ng-container *ngIf="profileInfoObj !== null">
+  <div><button (click)="lineLogout()">登出 LINE</button></div>
+
+  <p>姓名：{{ profileInfoObj.name }}</p>
+  <p>信箱：{{ profileInfoObj.email }}</p>
+  <img [src]="profileInfoObj.picture" />
+</ng-container>
