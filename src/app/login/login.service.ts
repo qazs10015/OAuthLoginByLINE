@@ -17,7 +17,7 @@ export class LoginService {
 
   /** 模擬取得 clientSecret 的 API */
   getClientSecret() {
-    return this.httpClient.get('../assets/fakeData.json');
+    return this.httpClient.get('assets/fakeData.json');
   }
 
   /** 取得 Access Token
