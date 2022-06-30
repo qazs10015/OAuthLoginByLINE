@@ -39,7 +39,7 @@
 
   基本設定完成後需要再設定 callBack URL，這個步驟會在取得授權後自動導頁到 callBack URL
 
-  ![image](https://user-images.githubusercontent.com/30744341/176726887-185a1d23-ba4a-4aaa-a372-fe80d9e37911.png)
+  ![image](https://user-images.githubusercontent.com/30744341/176728415-f00c9a77-43f5-4c56-8450-482a02dee3dd.png)
   
 ### 實際應用
 
@@ -59,6 +59,12 @@
   建立完成後就可以取得需要的資訊了，譬如 `Client ID`、`Client Secret`
 
   ![image](https://user-images.githubusercontent.com/30744341/176727860-7cf14d78-4eea-4880-8bcd-1980836bc93f.png)
+
+  ### 設定 callBack Url
+
+  基本設定完成後需要再設定 callBack URL，這個步驟會在取得授權後自動導頁到 callBack URL
+
+  ![image](https://user-images.githubusercontent.com/30744341/176726887-185a1d23-ba4a-4aaa-a372-fe80d9e37911.png)
 
 ### 實際應用
 
