@@ -28,7 +28,7 @@ export class LoginService {
     const body = {
       grant_type: 'authorization_code',
       code,
-      redirect_uri: 'http://localhost:4200/',
+      redirect_uri: environment.redirectUri,
       client_id: environment.clientId_LINE_Login,
       client_secret: clientSecret
     };

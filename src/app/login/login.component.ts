@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
     url.searchParams.set('response_type', 'code');
     url.searchParams.set('client_id', environment.clientId_LINE_Login);
-    url.searchParams.set('redirect_uri', 'http://localhost:4200/');
+    url.searchParams.set('redirect_uri', environment.redirectUri);
     url.searchParams.set('state', '123');
     url.searchParams.set('scope', 'profile openid email');
 

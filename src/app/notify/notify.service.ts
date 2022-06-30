@@ -25,7 +25,7 @@ export class NotifyService {
     const body = {
       response_type: 'code',
       client_id: environment.clientId_LINE_Notify,
-      redirect_uri: 'http://localhost:4200/notify',
+      redirect_uri: environment.redirectUri + '/notify',
       scope: 'notify',
       state: '123'
     };
@@ -39,7 +39,7 @@ export class NotifyService {
     const body = {
       grant_type: 'authorization_code',
       code,
-      redirect_uri: 'http://localhost:4200/notify',
+      redirect_uri: environment.redirectUri + '/notify',
       client_id: environment.clientId_LINE_Notify,
       client_secret: clientSecret
     }
