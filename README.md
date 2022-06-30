@@ -25,9 +25,9 @@
 
   ![image](https://user-images.githubusercontent.com/30744341/176723295-03161264-bd82-4bda-b1fe-f7549fea3b75.png)
 
-  建立完成後就可以取得需要的資訊了，譬如 `Channel ID`、`Channel secret`
+建立完成後就可以取得需要的資訊了，譬如 `Channel ID`、`Channel secret`
 
-  注意：以 OAuth 的角度 `Channel ID` 就是 `Client ID`，`Channel secret` 就是 `Client Secret`
+注意：以 OAuth 的角度 `Channel ID` 就是 `Client ID`，`Channel secret` 就是 `Client Secret`
 
 ### 取得 Email 資訊
 
