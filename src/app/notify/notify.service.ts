@@ -45,12 +45,12 @@ export class NotifyService {
     }
 
     const params = new URLSearchParams(Object.entries(body)).toString();
-    return this.httpClient.post('https://notify-bot.line.me/oauth/token', params, { headers: this.headers });
+    return this.httpClient.post('/oauth/token', params, { headers: this.headers });
   }
 
   revokeAccessToken() {
 
-    return this.httpClient.post('https://notify-api.line.me/api/revoke', null, {
+    return this.httpClient.post('/api/revoke', null, {
       headers: {
         Authorization: `Bearer ${this.getNotifyAccessToken()}`,
       },
@@ -64,7 +64,7 @@ export class NotifyService {
     const formData = new FormData();
     formData.append('message', message);
 
-    return this.httpClient.post('https://notify-api.line.me/api/notify', formData, {
+    return this.httpClient.post('/api/notify', formData, {
       headers: {
         Authorization: `Bearer ${this.getNotifyAccessToken()}`,
       },
