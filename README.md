@@ -2,13 +2,13 @@
 
 [Demo](https://qazs10015.github.io/OAuthLoginByLINE/)
 
-[LINE Login Document](https://developers.line.biz/en/reference/line-login/#issue-access-token)
+LINE Login 可正常使用，但 LINE Notify 有 CORS 問題，所以無法使用
 
-[LINE Notify Document](https://notify-bot.line.me/doc/en/)
-
-本專案使用 Angular 實作 LINE Login、LINE Notify 兩種功能
+如果有需要可以將專案下載在 Local 就可以正常使用了
 
 ## LINE Login
+
+[LINE Login Document](https://developers.line.biz/en/reference/line-login/#issue-access-token)
 
 ### LINE Develop Console
 
@@ -51,6 +51,8 @@
   4. 移除 AccessToken
 
 ## LINE Notify
+
+[LINE Notify Document](https://notify-bot.line.me/doc/en/)
 
 ### LINE Notify Service
 
