@@ -18,7 +18,6 @@ export class NotifyComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private notifyService: NotifyService) { }
 
   ngOnInit(): void {
-    debugger
     this.route.queryParamMap.subscribe(async queryParams => {
       const authCode = queryParams.get('code') ?? '';
 

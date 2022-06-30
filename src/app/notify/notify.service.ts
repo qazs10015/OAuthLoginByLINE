@@ -42,7 +42,7 @@ export class NotifyService {
       redirect_uri: environment.redirectUri + '/notify',
       client_id: environment.clientId_LINE_Notify,
       client_secret: clientSecret
-    }
+    };
 
     const params = new URLSearchParams(Object.entries(body)).toString();
     return this.httpClient.post('/oauth/token', params, { headers: this.headers });
