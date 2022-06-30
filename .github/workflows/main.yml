@@ -38,6 +38,7 @@ jobs:
       - name: commit file
         run: |
           cd ./dist
+          cp index.html 404.html
           git init -b gh-pages
           git config --local user.name $USER_NAME
           git config --local user.email $USER_EMAIL
