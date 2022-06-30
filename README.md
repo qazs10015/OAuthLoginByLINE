@@ -74,3 +74,13 @@
   2. 取得 AccessToken
   3. 發送訊息
   4. 移除 AccessToken
+
+### CORS 問題
+
+  LINE Notify 部屬在 Server 上會有 CORS 的問題，通常會需要建立一個後台
+  但如果 Server 有提供一些設定即便不需要後台也能使用
+
+  這篇文章的 CORS Problem 段落說明了作者是使用 [Netlify](https://www.netlify.com/) 架設網站，並有類似 proxy 的設定檔可以使用
+
+  [Sending Notification using LINE Notify API, React and Netlify](https://towardsdev.com/sending-notification-with-line-notify-using-react-and-netlify-7a86006705e7)
+  
