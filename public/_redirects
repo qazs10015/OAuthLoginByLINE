@@ -1,3 +1,4 @@
 /oauth/token https://notify-bot.line.me/oauth/token 200
 /api/notify https://notify-api.line.me/api/notify 200
 /api/revoke https://notify-api.line.me/api/revoke 200
+/*    /index.html   200
