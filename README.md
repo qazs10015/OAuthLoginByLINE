@@ -77,7 +77,7 @@
 
 ### CORS 問題
 
-  LINE Notify 部屬在 Server 上會有 CORS 的問題，通常會需要建立一個後台
+  LINE Notify 部署在 Server 上會有 CORS 的問題，通常會需要建立一個後台
 
   但如果 Server 有提供一些設定即便不需要後台也能使用
 
