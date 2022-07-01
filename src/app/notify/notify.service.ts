@@ -17,7 +17,7 @@ export class NotifyService {
 
   // 模擬取得 clientSecret 的 API
   getClientSecret() {
-    return this.httpClient.get('assets/fakeData.json');
+    return this.httpClient.get('assets/fakeData.json', { responseType: 'text' });
   }
 
   /** 取得授權碼 */
