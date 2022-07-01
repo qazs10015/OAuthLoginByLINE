@@ -17,7 +17,7 @@ export class NotifyService {
 
   // 模擬取得 clientSecret 的 API
   getClientSecret() {
-    return this.httpClient.get('assets/fakeData.json', { responseType: 'json' });
+    return this.httpClient.get('/src/assets/fakeData.json');
   }
 
   /** 取得授權碼 */
@@ -36,6 +36,7 @@ export class NotifyService {
 
   /** 取得 accessToken */
   getAccessToken(code: string, clientSecret: string) {
+    console.log(clientSecret);
     const body = {
       grant_type: 'authorization_code',
       code,

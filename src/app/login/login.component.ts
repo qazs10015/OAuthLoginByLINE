@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
     private notifyService: NotifyService) { }
 
   async ngOnInit() {
+    const clientObj: any = await lastValueFrom(this.loginService.getClientSecret());
+    debugger
 
     this.route.queryParamMap.subscribe(async queryParams => {
       const authCode = queryParams.get('code') ?? '';

@@ -1,10 +1,6 @@
 ## 實作 LINE Login、LINE Notify
 
-[Demo](https://qazs10015.github.io/OAuthLoginByLINE/)
-
-LINE Login 可正常使用，但 LINE Notify 有 CORS 問題，所以無法使用
-
-如果有需要可以將專案下載在 Local 就可以正常使用了
+[Demo](https://oauthloginbyline.netlify.app/)
 
 ## LINE Login
 
