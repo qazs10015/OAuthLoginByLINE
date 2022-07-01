@@ -2,6 +2,8 @@
 
 [Demo](https://oauthloginbyline.netlify.app/)
 
+前端實作 LINE Notify 時會遇到 CORS 問題，目前使用 [Netlify](https://www.netlify.com/)  代為轉址
+
 ## LINE Login
 
 [LINE Login Document](https://developers.line.biz/en/reference/line-login/#issue-access-token)
@@ -76,7 +78,10 @@
 ### CORS 問題
 
   LINE Notify 部屬在 Server 上會有 CORS 的問題，通常會需要建立一個後台
+
   但如果 Server 有提供一些設定即便不需要後台也能使用
+
+  專案內使用的設定檔為 [`_redirects`](https://github.com/qazs10015/OAuthLoginByLINE/blob/master/_redirects)
 
   這篇文章的 CORS Problem 段落說明了作者是使用 [Netlify](https://www.netlify.com/) 架設網站，並有類似 proxy 的設定檔可以使用
 

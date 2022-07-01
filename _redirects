@@ -1,6 +1,5 @@
 /oauth/token https://notify-bot.line.me/oauth/token 200
 /api/notify https://notify-api.line.me/api/notify 200
 /api/revoke https://notify-api.line.me/api/revoke 200
-/assets/fakeData.json src/assets/fakeData.json
 /*  /index.html 200
 
