@@ -32,13 +32,11 @@ export class LoginComponent implements OnInit {
         const clientObj: any = await lastValueFrom(this.loginService.getClientSecret());
         const tokenObj: any = await lastValueFrom(this.loginService.getAccessToken(authCode, clientObj.clientSecret_Login));
 
-        console.log(tokenObj);
         sessionStorage.setItem('access_token', tokenObj.access_token);
         sessionStorage.setItem('refresh_token', tokenObj.refresh_token);
         sessionStorage.setItem('id_token', tokenObj.id_token);
 
         this.profileInfoObj = await lastValueFrom(this.loginService.getProfileInfo(tokenObj.id_token));
-        console.log(this.profileInfoObj);
 
       }
 

@@ -23,7 +23,6 @@ export class NotifyComponent implements OnInit {
 
       if (!!authCode) {
         const clientObj: any = await lastValueFrom(this.notifyService.getClientSecret());
-        console.log(clientObj);
         const tokenObj: any = await lastValueFrom(this.notifyService.getAccessToken(authCode, clientObj.clientSecret_Notify));
 
         this.notifyService.setNotifyAccessToken(tokenObj.access_token);

@@ -36,7 +36,6 @@ export class NotifyService {
 
   /** 取得 accessToken */
   getAccessToken(code: string, clientSecret: string) {
-    console.log(clientSecret);
     const body = {
       grant_type: 'authorization_code',
       code,
