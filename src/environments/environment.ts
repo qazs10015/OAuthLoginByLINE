@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   redirectUri: 'http://localhost:4200',
   clientId_LINE_Login: '1657255693',
-  clientId_LINE_Notify: 'WwVpq6CPRKeAAv36AeW2HW'
+  clientId_LINE_Notify: 'WwVpq6CPRKeAAv36AeW2HW',
+  clientId_Google_Login: '652015633942-36v8v4rcm54s69j0ov3nnddd0r8hqqll.apps.googleusercontent.com',
 };
 
 /*

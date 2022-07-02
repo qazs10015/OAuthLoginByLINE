@@ -1,9 +1,10 @@
+import { CommonService } from './../services/common.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { LoginService } from './login.service';
-import { NotifyService } from '../notify/notify.service';
+import { LoginService } from '../services/login.service';
+import { NotifyService } from '../services/notify.service';
 
 @Component({
   selector: 'app-login',
@@ -20,18 +21,18 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private loginService: LoginService,
-    private notifyService: NotifyService) { }
+    private commonService: CommonService) { }
 
   async ngOnInit() {
     this.route.queryParamMap.subscribe(async queryParams => {
       const authCode = queryParams.get('code') ?? '';
       if (!!authCode) {
-        const clientObj: any = await lastValueFrom(this.loginService.getClientSecret());
-        const tokenObj: any = await lastValueFrom(this.loginService.getAccessToken(authCode, clientObj.clientSecret_Login));
+        const clientObj: any = await lastValueFrom(this.commonService.getClientSecret());
+        const tokenObj: any = await lastValueFrom(this.loginService.getAccessToken(authCode, clientObj.clientSecret_LINE_Login));
 
-        sessionStorage.setItem('access_token', tokenObj.access_token);
-        sessionStorage.setItem('refresh_token', tokenObj.refresh_token);
-        sessionStorage.setItem('id_token', tokenObj.id_token);
+        localStorage.setItem('access_token', tokenObj.access_token);
+        localStorage.setItem('refresh_token', tokenObj.refresh_token);
+        localStorage.setItem('id_token', tokenObj.id_token);
 
         this.profileInfoObj = await lastValueFrom(this.loginService.getProfileInfo(tokenObj.id_token));
 
@@ -58,8 +59,8 @@ export class LoginComponent implements OnInit {
 
   /** 登出 */
   async lineLogout() {
-    const clientObj: any = await lastValueFrom(this.loginService.getClientSecret());
-    this.loginService.logout(clientObj.clientSecret_Login).subscribe(() => {
+    const clientObj: any = await lastValueFrom(this.commonService.getClientSecret());
+    this.loginService.logout(clientObj.clientSecret_LINE_Login).subscribe(() => {
       // 清空資料
       this.profileInfoObj = null;
       // 清除路由

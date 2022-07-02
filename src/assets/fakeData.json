@@ -1,4 +1,5 @@
 {
-  "clientSecret_Login": "d541c5ba394b925778b5e6af542bc5b0",
-  "clientSecret_Notify": "QPJyZ1uU9vhF5G1sNcn4pXIipQNTffvaLlpJPXnGWBw"
+  "clientSecret_LINE_Login": "d541c5ba394b925778b5e6af542bc5b0",
+  "clientSecret_Notify": "QPJyZ1uU9vhF5G1sNcn4pXIipQNTffvaLlpJPXnGWBw",
+  "clientSecret_Google_Login": "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"
 }

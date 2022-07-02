@@ -3,25 +3,29 @@
 </div>
 <h2>管理員登入</h2>
 <small>假後台登入 帳密：123/123</small>
-<form [formGroup]="myForm" (ngSubmit)="login()">
+<form [formGroup]="myForm">
   <div>
     Account：<input type="text" placeholder="123" formControlName="account" />
   </div>
   <div>Password：<input type="password" formControlName="password" /></div>
   <div>
-    <button
-      *ngIf="!isShowPushNotifyView"
-      type="submit"
-      [disabled]="myForm.invalid"
-    >
-      Login
-    </button>
+    <ng-container *ngIf="!isShowPushNotifyView">
+      <button (click)="login()" [disabled]="myForm.invalid">Login</button>
 
-    <button *ngIf="isShowPushNotifyView" (click)="logout('system')">
+      <button (click)="googleLogin()">Google Login</button>
+    </ng-container>
+
+    <button *ngIf="isShowPushNotifyView" (click)="logout(loginType)">
       Logout
     </button>
   </div>
 </form>
+
+<ng-container *ngIf="profileInfoObj !== null">
+  <p>管理員姓名：{{ profileInfoObj.name }}</p>
+  <p>管理員信箱：{{ profileInfoObj.email }}</p>
+  <img [src]="profileInfoObj.picture" />
+</ng-container>
 
 <div *ngIf="isShowPushNotifyView" [style.margin-top.px]="50">
   <textarea #txtNotifyMsg name="txtNotifyMsg" cols="30" rows="10"></textarea>

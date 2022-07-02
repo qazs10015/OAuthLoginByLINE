@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+/** LINE Login */
 export class LoginService {
 
   private headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
@@ -15,10 +16,7 @@ export class LoginService {
 
   }
 
-  /** 模擬取得 clientSecret 的 API */
-  getClientSecret() {
-    return this.httpClient.get('/src/assets/fakeData.json');
-  }
+
 
   /** 取得 Access Token
    * ref：https://developers.line.biz/en/reference/line-login/#issue-access-token
@@ -57,7 +55,7 @@ export class LoginService {
   /** 登出 */
   logout(clientSecret: string) {
     const body = {
-      access_token: sessionStorage.getItem('access_token')!,
+      access_token: localStorage.getItem('access_token')!,
       client_id: environment.clientId_LINE_Login,
 
       // 依照官方文件說明，WebApp 需要填入 client_secret

@@ -1,7 +1,8 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { NotifyService } from './notify.service';
+import { NotifyService } from '../services/notify.service';
 import { lastValueFrom } from 'rxjs';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-notify',
@@ -15,14 +16,18 @@ export class NotifyComponent implements OnInit {
     return this.notifyService.getNotifyAccessToken() || '';
   }
 
-  constructor(private router: Router, private route: ActivatedRoute, private notifyService: NotifyService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private notifyService: NotifyService,
+    private commonService: CommonService) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(async queryParams => {
       const authCode = queryParams.get('code') ?? '';
 
       if (!!authCode) {
-        const clientObj: any = await lastValueFrom(this.notifyService.getClientSecret());
+        const clientObj: any = await lastValueFrom(this.commonService.getClientSecret());
         const tokenObj: any = await lastValueFrom(this.notifyService.getAccessToken(authCode, clientObj.clientSecret_Notify));
 
         this.notifyService.setNotifyAccessToken(tokenObj.access_token);
