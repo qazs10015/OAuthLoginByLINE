@@ -1,15 +1,20 @@
-<div>
-  <a [routerLink]="'/notify'">切換 LINE Notify</a>
+<div class="loginGroup">
+  <div>
+    <button (click)="lineLogin()" *ngIf="profileInfoObj === null">
+      登入 LINE
+    </button>
+    <button (click)="lineLogout()" *ngIf="profileInfoObj !== null">
+      登出 LINE
+    </button>
+  </div>
+  <div>
+    <button [routerLink]="'/admin'">管理員登入</button>
+  </div>
 </div>
-
-<div>
-  <button (click)="lineLogin()" *ngIf="profileInfoObj === null">
-    登入 LINE
-  </button>
-</div>
-
 <ng-container *ngIf="profileInfoObj !== null">
-  <div><button (click)="lineLogout()">登出 LINE</button></div>
+  <div>
+    <button [routerLink]="'/notify'">切換 LINE Notify</button>
+  </div>
 
   <p>姓名：{{ profileInfoObj.name }}</p>
   <p>信箱：{{ profileInfoObj.email }}</p>

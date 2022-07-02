@@ -38,9 +38,9 @@ export class NotifyComponent implements OnInit {
   }
 
   /** 發送訊息 */
-  pushNotify() {
-    this.notifyService.pushNotify('This is LINE notify homework').subscribe()
-  }
+  // pushNotify() {
+  //   this.notifyService.pushNotify('This is LINE notify homework').subscribe();
+  // }
 
   /** 移除 Token */
   revokeToken() {

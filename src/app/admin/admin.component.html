@@ -1,0 +1,30 @@
+<div>
+  <button [routerLink]="'/'">切換 LINE Login</button>
+</div>
+<h2>管理員登入</h2>
+<small>假後台登入 帳密：123/123</small>
+<form [formGroup]="myForm" (ngSubmit)="login()">
+  <div>
+    Account：<input type="text" placeholder="123" formControlName="account" />
+  </div>
+  <div>Password：<input type="password" formControlName="password" /></div>
+  <div>
+    <button
+      *ngIf="!isShowPushNotifyView"
+      type="submit"
+      [disabled]="myForm.invalid"
+    >
+      Login
+    </button>
+
+    <button *ngIf="isShowPushNotifyView" (click)="logout('system')">
+      Logout
+    </button>
+  </div>
+</form>
+
+<div *ngIf="isShowPushNotifyView" [style.margin-top.px]="50">
+  <textarea #txtNotifyMsg name="txtNotifyMsg" cols="30" rows="10"></textarea>
+  <br />
+  <button (click)="pushNotify()">Push Notify</button>
+</div>

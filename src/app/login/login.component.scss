@@ -1,0 +1,7 @@
+.loginGroup {
+  width: 500px;
+  & > div {
+    display: inline-block;
+    margin-right: 150px;
+  }
+}
